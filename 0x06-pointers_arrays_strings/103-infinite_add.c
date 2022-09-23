@@ -12,7 +12,7 @@ void rev_string(char *n)
 	int j = 0;
 	char temp;
 
-	while (*( n + 1) != '\0')
+	while (*(n + i) != '\0')
 	{
 		i++;
 	}
@@ -21,11 +21,10 @@ void rev_string(char *n)
 	for (j = 0; j < i; j++, i--)
 	{
 		temp = *(n + j);
-		*(n + j); = *(n + i);
+		*(n + j) = *(n + i);
 		*(n + i) = temp;
 	}
 }
-
 
 /**
  * infinite_add - add 2 numbers together
