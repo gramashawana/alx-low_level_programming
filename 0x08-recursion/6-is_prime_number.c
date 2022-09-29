@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 int actual_prime(int n, int i);
 
@@ -6,12 +7,10 @@ int actual_prime(int n, int i);
  * is_prime_number - says if an integer is a prime number or not
  * @n: number to evaluate
  *
- * Return: 1 if n is a prime number, 0 if not
+ * Return: integer value
  */
 int is_prime_number(int n)
 {
-	if (n <= 1)
-		return (0);
 	return (check_prime(n, 1));
 }
 
@@ -20,12 +19,15 @@ int is_prime_number(int n)
  * @n: number to evaluate
  * @i: iterator
  *
- * Return: 1 if n is prime, 0 if not
+ * Return: 1 for prime or 0 for composite
  */
-int actual_prime(int n, int i)
+int check_prime(int n, int i)
 {
-	if (i == 1)
-		return (1);
-	if (n % i == 0 && i > 0)
+	if (i <= 1)
 		return (0);
+	if (n % i == 0 && i > 1)
+		return (0);
+	if ((n / 1) < i)
+		return (1);
+
 	return (check_prime(n, i + 1));
